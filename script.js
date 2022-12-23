@@ -8,6 +8,11 @@ var characters = ['!','@','#','$','^','&','*']
 
 
 // Write password to the #password input
+function generatePassword() {
+
+  return;
+}
+
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
