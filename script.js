@@ -23,8 +23,8 @@ function generatePassword() {
      
     } else{
   var wantSpecial = confirm(`Do you want special characters?`)
-  var wantLowerCased = confirm(`Do you want lower case letters?`)
-  var wantUpperCased = confirm(`Do you want upper case letters?`)
+  var wantLowerCase = confirm(`Do you want lower case letters?`)
+  var wantUpperCase = confirm(`Do you want upper case letters?`)
   var wantNumbers = confirm(`Do you want numbers?`)
   
 
@@ -33,7 +33,14 @@ if (wantSpecial) {
   addOptions = addOptions.concat(specialChar)
 
 }
+if (wantLowerCase) {
+  addOptions = addOptions.concat(lowerCase)
 
+}
+if (wantUpperCase) {
+  addOptions = addOptions.concat(upperCase)
+
+}
 }
 generatePassword();
 
