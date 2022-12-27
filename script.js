@@ -41,6 +41,10 @@ if (wantUpperCase) {
   addOptions = addOptions.concat(upperCase)
 
 }
+if (wantNumbers) {
+  addOptions = addOptions.concat(numbers)
+
+}
 }
 generatePassword();
 
