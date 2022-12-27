@@ -19,7 +19,7 @@ function generatePassword() {
   
      alert ("Please choose a number between 8 and 128 characters.")
      generatePassword();
-    console.log(passwordLength)
+
     } else{
   var wantSpecial = confirm(`Do you want special characters?`)
   var wantLowerCase = confirm(`Do you want lower case letters?`)
