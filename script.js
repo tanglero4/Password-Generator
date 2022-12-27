@@ -45,6 +45,10 @@ if (wantNumbers) {
   addOptions = addOptions.concat(numbers)
 
 }
+if (wantSpecial == false && wantLowerCase == false && wantUpperCase == false && wantNumbers == false){
+  alert ("Please choose at least one type of character for your password")
+  generatePassword()
+}
 }
 generatePassword();
 
