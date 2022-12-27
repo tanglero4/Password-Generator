@@ -6,20 +6,13 @@ const lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "
 const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
 const numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
 const specialChar = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")", "=", "+", "-", "_", "/", ".", ",", "'", ";", ":", "[","]","{", "}", "?", "<", ">", "|",]
-
-
-var upperCaseQuestion = window.prompt(`Do you want upper case letters?`);
-var lowerCaseQuestion = window.prompt(`Do you want lower case letters?`);
-var numbersQuestion = window.prompt(`Do you want numbers?`);
-var specialCharactersQuestion = window.prompt(`Do you want special characters?`);
-
 // Write password to the #password input
 
 //start the function
 
 
 function generatePassword() {
- var addonOptions = []
+ var addOptions = []
   var finalPassword = ""
   var passwordLength = prompt ("How long do you want your password to be? ")
 
@@ -28,7 +21,18 @@ function generatePassword() {
      alert ("Please choose a number between 8 and 128 characters.")
      generatePassword();
      
-    }
+    } else{
+  var wantSpecial = confirm(`Do you want special characters?`)
+  var wantLowerCased = confirm(`Do you want lower case letters?`)
+  var wantUpperCased = confirm(`Do you want upper case letters?`)
+  var wantNumbers = confirm(`Do you want numbers?`)
+  
+
+
+if (wantSpecial) {
+  addOptions = addOptions.concat(specialChar)
+
+}
 
 }
 generatePassword();
