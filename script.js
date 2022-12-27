@@ -1,6 +1,6 @@
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
-//Assugn variables
+//Assign variables
 
 const lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "Sz"];
 const upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
@@ -10,9 +10,8 @@ const specialChar = ["~", "`", "!", "@", "#", "$", "%", "^", "&", "*", "(", ")",
 
 //start the function
 
-
 function generatePassword() {
- var addOptions = []
+ var addOnOptions = []
   var finalPassword = ""
   var passwordLength = prompt ("How long do you want your password to be? ")
 
@@ -20,40 +19,46 @@ function generatePassword() {
   
      alert ("Please choose a number between 8 and 128 characters.")
      generatePassword();
-     
+    console.log(passwordLength)
     } else{
   var wantSpecial = confirm(`Do you want special characters?`)
   var wantLowerCase = confirm(`Do you want lower case letters?`)
   var wantUpperCase = confirm(`Do you want upper case letters?`)
   var wantNumbers = confirm(`Do you want numbers?`)
-  
-
 
 if (wantSpecial) {
-  addOptions = addOptions.concat(specialChar)
+  addOnOptions = addOnOptions.concat(specialChar)
 
 }
 if (wantLowerCase) {
-  addOptions = addOptions.concat(lowerCase)
+  addOnOptions = addOnOptions.concat(lowerCase)
 
 }
 if (wantUpperCase) {
-  addOptions = addOptions.concat(upperCase)
+  addOnOptions = addOnOptions.concat(upperCase)
 
 }
 if (wantNumbers) {
-  addOptions = addOptions.concat(numbers)
+  addOnOptions = addOnOptions.concat(numbers)
 
 }
 if (wantSpecial == false && wantLowerCase == false && wantUpperCase == false && wantNumbers == false){
   alert ("Please choose at least one type of character for your password")
-  generatePassword()
+
+} 
+if (passwordLength >= 8 && passwordLength <= 128) {
+    for(var i=0; i < passwordLength; i++) {
+      randomPassword = Math.floor(Math.random() * addOnOptions.length);
+      finalPassword += addOnOptions[randomPassword]
+    }
+  }
 }
+document.getElementById("password").innerHTML = finalPassword
 }
 generatePassword();
 
 
-
+//Write password to the #password input
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
