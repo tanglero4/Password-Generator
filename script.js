@@ -15,7 +15,7 @@ function generatePassword() {
   var finalPassword = ""
   var passwordLength = prompt ("How long do you want your password to be? ")
 
-  if (passwordLength <= 8 && passwordLength >= 128) {
+  if (passwordLength < 8 || passwordLength > 128) {
   
      alert ("Please choose a number between 8 and 128 characters.")
      generatePassword();
@@ -46,6 +46,7 @@ if (wantSpecial == false && wantLowerCase == false && wantUpperCase == false && 
   alert ("Please choose at least one type of character for your password")
 
 } 
+// randomize password based on user selections
 if (passwordLength >= 8 && passwordLength <= 128) {
     for(var i=0; i < passwordLength; i++) {
       randomPassword = Math.floor(Math.random() * addOnOptions.length);
@@ -53,18 +54,9 @@ if (passwordLength >= 8 && passwordLength <= 128) {
     }
   }
 }
+// Adds password to password text area
 document.getElementById("password").innerHTML = finalPassword
-}
-generatePassword();
-
-
-//Write password to the #password input
-function writePassword() {
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
-  passwordText.value = password;
 }
 
 // Add event listener to generate button
-generateBtn.addEventListener("click", writePassword);
+generateBtn.addEventListener("click", generatePassword);
